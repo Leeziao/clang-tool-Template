@@ -2,6 +2,8 @@ project(cmake-search-clang)
 cmake_minimum_required(VERSION 3.12)
 
 # set(CMAKE_VERBOSE_MAKEFILE ON)
+set(CMAKE_CXX_FLAGS
+  "${CMAKE_CXX_FLAGS} -Wall -Werror -fno-rtti -fno-omit-frame-pointer")
 
 if (NOT DEFINED ENV{LLVM_ROOT})
 	message(FATAL_ERROR "Environmental Variable LLVM_ROOT is not set, please set to the path to build directory")
